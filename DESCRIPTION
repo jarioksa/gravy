@@ -1,7 +1,7 @@
 Package: gravy
 Title: Gradient Analysis of Vegetation
-Version: 0.1-1
-Date: Mar 28, 2008
+Version: 0.1-2
+Date: Nov 24, 2008
 Author: Jari Oksanen
 Maintainer: Jari Oksanen <jari.oksanen@oulu.fi>
 Suggests: lattice 
@@ -11,4 +11,4 @@ Description: Gravy is an experimental package of tools for gradient analysis
  adventurous mind and good knowledge of methods and R.  
 Maintainer: Jari Oksanen <jari.oksanen@oulu.fi>
 License: GPL-2
-URL: http://cc.oulu.fi/~jarioksa/
+URL: http://vegan.r-forge.r-project.org/
