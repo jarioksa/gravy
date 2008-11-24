@@ -1,0 +1,2 @@
+"HOF" <-
+function(...) UseMethod("HOF")

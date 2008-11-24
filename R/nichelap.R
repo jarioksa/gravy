@@ -1,0 +1,5 @@
+"nichelap" <-
+    function(...)
+{
+    UseMethod("nichelap")
+}

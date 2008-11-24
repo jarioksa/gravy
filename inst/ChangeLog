@@ -1,0 +1,161 @@
+Version 0.1-1 March 28, 2008
+	* plot.HOF.frame: gained argument 'species' to list only selected
+	species (on Rob Marrs's request).  
+	* plotGrad: a new name of plot.grad to avoid warnings in R CMD
+	check.
+Version 0.1-0 March 28, 2008
+	* Moved the package to a local svn repository in my PC.
+	* Minimal changes to pass R CMD check with only one warning (about
+	"plot.grad" that is interpreted as \method{plot}{grad}). 
+	* DESCRIPTION: updated, Depends lattice
+	* PACKAGE: removed files unnecessary in current R.
+	* hillscale.Rd: broken links corrected.
+	* gravy-internal: canonical etnries for method functions.
+	* nichelap.Rd: canonical links to method functions.
+	* mtf01.Rd: correct chapter heading for \examples{}.
+	* as.matrix.nichelap: added canonical "..."
+
+---------------------------------------------------------------------
+	
+version 0.0-22 May 20, 2005
+	* boxgradient: a new function to draw boxplots of species
+	occurrences along a gradient.
+	* gaussgradient: a new function to draw fitted Gaussian responses
+	for speceis along a a gradient.
+	* betahill, hillscale: return 'call' instead of 'Call'.
+	* documentation: changed references from deprecated 'lset' to
+	'trellis.par.set'.
+	* passes check in R 2.1.0.
+Version 0.0-21 Sep 7, 2004
+	* nichelap: Failed with HOF model I.
+Version 0.0-20 Sep 6, 2004
+	* HOF.data.frame bugfix: Family was silently ignored and binomial
+	model always fitted for data frames. . 
+Version 0.0-19 Sep 6, 2004
+	* Cleanup to pass R CMD check without warnings.
+	* All C calls now have a `package' argument (betahill,
+	gradder.HOF, hillscale).
+	* plot.HOF.frame: no longer conflict with the generic ´plot'.
+	* logLik.HOF: documented (just so and so).
+	* printCoefmat now used instead of deprecated print.coefmat
+	(print.HOF, print.HOF.frame, zzz.R).
+	* Code/Document mismatches corrected (HOF.Rd, gravy-internal.Rd). 
+Version 0.0-18 Sep 6, 2004
+	* nichelap: New function to find niche overlap for a pair of fitted
+	species responses or for all pairs in a data frame. 
+Version 0.0-17 Sep 1, 2004
+	* Grand Liverpool cleanup: Knows now families poisson and gaussian
+	in addition to binomial (the only one formerly). AIC now correct. 
+Version 0.0-16 May 26, 2004
+	* Works now with R 1.9.0: print.coefmat was removed from R
+	(which is incomprehensible), but now there is a work-around.
+	* GaussPara.HOF.frame: Passes now extra arguments to GaussPara.HOF.
+Version 0.0-15 Sep 30, 2003
+	* HOF1: Model I works correctly when M is a vector.
+	* plot.HOF.frame: Draws lines correctly when M > 1 and
+	non-constant. 
+	* plot.betadiversity: Spline smooth made an option and defaults to
+	FALSE. It seems to make extravagant extra loops too often.
+Version 0.0-14 Sep 25, 2003
+	* Unstabilizing changes to clean up for the first almost-release
+	(version 0.1).  
+	* HOF.default: Model fitting results within list item
+	`models'. Added entry `fitted' in models.
+	* coef.HOF: Returns all coefficients in a matrix, or selected
+	coefficient. Does not return the best model (pick.model). Labels
+	coefficients. 
+	* deviance.HOF: Adjusted for new HOF. Returns all deviances by
+	default.
+	* df.residual.HOF: Adjusted, and more general.
+	* print.HOF: Utilizes all previous and is much cleaner. Shows BIC.
+	* pick.model: AIC and BIC as alternatives to old F and Chisq.
+	* fitted.HOF: simply returns the entry `fitted' of
+	HOF.default$models.
+	* plot.HOF: Adjusted for fitted etc., uses matplot.
+	* summary.HOF: removed, since print.HOF does the job.
+	* HOF1: Model specified by character argument ("IV") instead of
+	integer. HOF.default and predict.HOF adjusted for this.
+	* GaussPara.optop.HOF: Adjusted for changes in coef.HOF.
+	* HOF.data.frame: Now a simple lapply.
+	* print.HOF.data.frame: Prints deviances and suggested (default)
+	best models. Needs more thinking.
+	* GaussPara.HOF.frame: Now a simple lapply.
+	print.GaussPara.HOF.frame knows this and is simpler, too.
+	* betadiversity.HOF.frame: Adjusted for changes in coef.HOF.
+	* gradder.HOF: Adjusted for changes in coef.HOF. Does p[4] <- p[2]
+	in model 4, and p[is.na(p)] <- 0 for all models.
+	* plot.betadiversity: Uses now spline to draw a smoother line.
+	* plot.HOF.frame: Adjusted for previous changes and much cleaner.
+	Tried with splines, but these got kinky (remember!).  
+Version 0.0-13 Sep 25, 2003
+	* names.HOF, names.HOF.frame: removed. The implementation was a
+	Bad Idea(TM) because it conflicted with standard usage of generic
+	names() in other functions, for instance in str(). plot.HOF.frame
+	and print.HOF.frame changed accordingly.
+	* summary.HOF: first argument now object instead of x. Still one
+	warning in R CMD check: First argument in plot.HOF.frame is mods
+	instead of x.
+Version 0.0-12 Sep-23, 2003
+	* Many minor changes were made in the library while writing a ms
+	with Peter Minchin. Now these changes were transferred to the
+	public package. The following entries list the most visible
+	changes.  
+	* betahill, hillscale: added a frequency limit for species.  
+	* GaussPara.optop.HOF: Tries a bit harder to find optima.
+	* plot.betadiversity: User can change axis labels and plot types. 
+	* plot.HOF: transfers parameters to pick.model.
+	* ssHOF: Tries harder to find starting values, when first attempt
+	indicates an inverted response.
+Version 0.0-11
+	* hofutil.c: Internal change -- defines now MAXDOUBLE as
+	DOUBLE_XMAX of R.h, because values.h is empty in MinGW32.
+Version 0.0-10
+	* betahill, hillscale: Expands now spTol (and hence Hill.1) by a
+	factor sqrt(c), where c is the expansion factor for species WA
+	(and hence Hill.2). Simulation with Gaussian response model showed
+	that this gives a reasonable (over)estimate of real width.
+Version 0.0-9
+	* betahill, hillscale: New function to find the Hill indices of
+	beta diversity and to rescale the gradient by segments to
+	approximately  constant Hill index 2.
+Version 0.0-8
+	* gradscale: A new function to scale an ecological gradient to the
+	constant rate of compositional change.  
+	* gradder.HOF (and hence betadiversity): Gives now the derivative
+	w.r.t. to the gradient unit instead of the gradient range. 
+Version 0.0-7
+	* betadiversity: A new function to give the instantaneous rate of
+	change at any gradient location. Implemented for HOF.frame.
+Version 0.0-6
+	* GaussPara.HOF enhancements: Knows now when HOF V is monotone and
+	probably finds very narrow HOF V models.
+	* GaussPara.HOF.frame: Transfers now parameters to `pick.model'.
+	* print.GaussPara: Improved.
+Version 0.0-5
+	* GaussPara: A new function to get Gaussian-like parameters
+	optimum, tolerance and height at optimum. So far implemented only
+	for HOF models (`GaussPara.HOF').
+Version 0.0-4
+	* fitted.HOF: A new function to return the fitted values for any
+	gradient points. Accompanying changes in `scale01', `HOF1'.
+	Moreover, added parameter `M' in `fitted.HOF': This may break
+	plotting, since earlier used `M=1' always.  
+	* coef.HOF: Keyword `model' to select any model.
+Version 0.0-3
+	* HOF: Replaces HOF.fit: A method function with cases HOF.default
+	and HOF.data.frame. HOF.default returns an object of class "HOF",
+	and HOF.data.frame an object of class "HOF.frame" which is a list
+	of "HOF" objects.
+	* pick.model: Knows now about F distribution. Keyword
+	`overdispersion' changed to `test'.
+	* fitted.HOF, df.residual.HOF, deviance.HOF, coef.HOF,
+	names.HOF.frame, names.HOF: New functions.
+	* plot.HOF.frame: A trellis based function to plot.  
+Version 0.0-2
+	* First time tried to do something else and failed: now should
+	handle general binomial models (not only binary)
+	* pick.model knows about overdispersion now: divides differences
+	in deviance by the scale of model V.
+Version 0.0-1
+	* First release: only collected the HOF functions I had for fitting
+	binary data on Mt Field
