@@ -3,10 +3,11 @@ function (x, y, M, model = 5)
 {
     x <- scale01(x)
     if (model >= 4) {
-        m2 <- glm(cbind(y, M - y) ~ x + I(x^2), family = binomial)
+        m2 <- glm(cbind(y, M - y) ~ x + I(x^2), family = quasibinomial)
         k <- coef(m2)
         if (k[3] > 0) {
-            m2 <- glm(cbind(y, M-y) ~ x + offset(-x^2), family=binomial)
+            m2 <- glm(cbind(y, M-y) ~ x + offset(-x^2),
+                      family=quasibinomial)
             k <- c(coef(m2), -1)
         }
         names(k) <- NULL
@@ -22,7 +23,7 @@ function (x, y, M, model = 5)
         c <- b * u + r
     }
     else if (model > 1) {
-        m1 <- glm(cbind(y, M - y) ~ x, family = binomial)
+        m1 <- glm(cbind(y, M - y) ~ x, family = quasibinomial)
         k <- coef(m1)
         names(k) <- NULL
         a <- -k[1]
