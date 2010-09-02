@@ -34,7 +34,8 @@
                   y = spec, M = M, model = "IV", ...)
     fv <- HOF1(x, "IV", IV.res$estimate, M, ...)
     IV.res$fitted <- fv
-    IV.res$deviance <- sum(dev.resids(spec/div, fv/div, wt))
+    IV.res$residuals <- dev.resids(spec/div, fv/div, wt)
+    IV.res$deviance <- sum(IV.res$residuals)
     III.res <- nlm(mlHOF, p = ssHOF(grad, spec, M, 3), x = grad, 
                    y = spec, M = M, model = "III", ...)
     tmp <- nlm(mlHOF, p = c(IV.res$est[1:2], 0), x = grad, y = spec, 
@@ -46,7 +47,8 @@
     if (tmp$min < III.res$min) 
         III.res <- tmp
     III.res$fitted <- fv <- HOF1(x, "III", III.res$estimate, M, ...)
-    III.res$deviance <- sum(dev.resids(spec/div, fv/div, wt))
+    III.res$residuals <- dev.resids(spec/div, fv/div, wt)
+    III.res$deviance <- sum(III.res$residuals)
     V.res <- nlm(mlHOF, p = c(IV.res$est, IV.res$est[2]), x = grad, 
                  y = spec, M = M, model = "V", ...)
     second <- nlm(mlHOF, p = c(III.res$est, 0), x = grad, y = spec, 
@@ -55,15 +57,18 @@
         V.res <- second
     V.res$fitted <-
         fv <- HOF1(x, model = "V", V.res$estimate, M, ...)
-    V.res$deviance <- sum(dev.resids(spec/div, fv/div, wt))
+    V.res$residuals <- dev.resids(spec/div, fv/div, wt)
+    V.res$deviance <- sum(V.res$residuals) 
     II.res <- nlm(mlHOF, p = ssHOF(grad, spec, M, 2), x = grad, 
                   y = spec, M = M, model = "II", ...)
     II.res$fitted <- fv <- HOF1(x, "II", II.res$estimate, M, ...)
-    II.res$deviance <- sum(dev.resids(spec/div, fv/div, wt))
+    II.res$residuals <- dev.resids(spec/div, fv/div, wt)
+    II.res$deviance <- sum(II.res$residuals)
     I.res <- nlm(mlHOF, p = ssHOF(grad, spec, M, 1), x = grad, 
                  y = spec, M = M, model = "I", ...)
     I.res$fitted <- fv <- HOF1(x, "I", I.res$estimate, M, ...)
-    I.res$deviance <- sum(dev.resids(spec/div, fv/div, wt))
+    I.res$residuals <- dev.resids(spec/div, fv/div, wt)
+    I.res$deviance <- sum(I.res$residuals)
     models <- list(V = V.res, IV = IV.res, III = III.res, II = II.res, 
                    I = I.res)
     out <- list(call = match.call(), x = x.orig, y = spec, x.name = x.name, 
