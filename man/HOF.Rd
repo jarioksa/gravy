@@ -27,8 +27,8 @@
 \method{plot}{HOF}(x, ...)
 \method{plot}{HOF.frame}(x, level = 0.95, test ="F", species, ...) 
 \method{fitted}{HOF}(object, model, ...)
-\method{residuals}{HOF}(object, type = c("deviance", "working", "response"), 
-    model, ...)
+\method{residuals}{HOF}(object, type = c("deviance", "working",
+  "response", "pearson"), model, ...)
 \method{predict}{HOF}(object, newdata, model, ...)
 \method{GaussPara}{HOF}(resp, model, ...)
 }
@@ -48,7 +48,7 @@
   \item{test}{Test for model selection. Alternatives are \code{"F"},
     \code{"Chisq"}, \code{"AIC"}, \code{"BIC"}. }
   \item{type}{the type of residuals which should be returned (see
-    \code{\link{predict.glm}}).}
+    \code{\link{residuals.glm}}).}
   \item{species}{Names of the species displayed in graphs.}
   \item{x, object}{An object from \code{HOF(spec, \dots)}.}
   \item{newdata}{Vector of gradient values for prediction.}

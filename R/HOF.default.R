@@ -14,9 +14,10 @@
         dev <- sum(dev.resids(y, mu, wt))
         aic(y, n, mu, wt, dev)/2
     }
-    aic <- family()$aic
-    dev.resids <- family()$dev.resids
-    famname <- family()$family
+    fam <- eval(family())
+    aic <- fam$aic
+    dev.resids <- fam$dev.resids
+    famname <- fam$family
     if (!(famname %in% c("binomial", "gaussian", "poisson")))
         stop("Allowed familes: binomial, gaussian, poisson")
     div <- if(famname == "binomial") M else  1
@@ -73,7 +74,7 @@
                    I = I.res)
     out <- list(call = match.call(), x = x.orig, y = spec, x.name = x.name, 
                 y.name = y.name, range = x.range, M = M, nobs = nobs, 
-                models = models)
+                models = models, family = fam)
     class(out) <- "HOF"
     out
 }
