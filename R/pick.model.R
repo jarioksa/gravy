@@ -1,5 +1,5 @@
 "pick.model" <-
-    function (obj, level = 0.95, test = c("F", "Chisq", "AIC", "BIC"), 
+    function (obj, level = 0.95, test = c("F", "Chisq", "AIC", "AICc", "BIC"), 
               ...) 
 {
     test <- match.arg(test)
@@ -29,6 +29,8 @@
             log(obj$nobs)
         else 2
         ic <- 2*logLik(obj) + k * sapply(obj$models, function(x) length(x$estimate))
+        if (test == "AICc")
+            ic <- ic + 2*k*(k + 1)/(obj$nobs - k - 1)
         model <- (names(ic))[which.min(ic)]
     }
     model

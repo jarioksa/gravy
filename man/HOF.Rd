@@ -46,7 +46,7 @@
   \item{freq.limit}{Lowest frequency of species analysed.}
   \item{level}{Probability for model selection (1-P).}
   \item{test}{Test for model selection. Alternatives are \code{"F"},
-    \code{"Chisq"}, \code{"AIC"}, \code{"BIC"}. }
+    \code{"Chisq"}, \code{"AIC"}, \code{"AICc"} and \code{"BIC"}. }
   \item{type}{the type of residuals which should be returned (see
     \code{\link{residuals.glm}}).}
   \item{species}{Names of the species displayed in graphs.}

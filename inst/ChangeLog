@@ -1,7 +1,8 @@
-Version 0.1-3 September 2, 2010
+Version 0.1-3 September 8, 2010
 	* HOF: gained residuals() method with (useful) 'type's "deviance",
 	"response" and "pearson" plus (useless) 'type = "working"'.
 	* HOF: returns 'family' object.
+	* HOF: added AICc as a criterion of model picking.
 Version 0.1-2 March 18, 2010
 	* ssHOF: HOF gave unnecesarry warnings when used with non-integer
 	data. 
@@ -10,6 +11,7 @@ Version 0.1-1 March 28, 2008
 	species (on Rob Marrs's request).  
 	* plotGrad: a new name of plot.grad to avoid warnings in R CMD
 	check.
+	* Moved to vegan.r-forge.r-project.org on Nov 24, 2008.
 Version 0.1-0 March 28, 2008
 	* Moved the package to a local svn repository in my PC.
 	* Minimal changes to pass R CMD check with only one warning (about
@@ -17,7 +19,7 @@ Version 0.1-0 March 28, 2008
 	* DESCRIPTION: updated, Depends lattice
 	* PACKAGE: removed files unnecessary in current R.
 	* hillscale.Rd: broken links corrected.
-	* gravy-internal: canonical etnries for method functions.
+	* gravy-internal: canonical entries for method functions.
 	* nichelap.Rd: canonical links to method functions.
 	* mtf01.Rd: correct chapter heading for \examples{}.
 	* as.matrix.nichelap: added canonical "..."

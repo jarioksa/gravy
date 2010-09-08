@@ -21,7 +21,8 @@
 \method{deviance}{HOF}(object, model, ...)
 \method{logLik}{HOF}(object, ...)
 \method{df.residual}{HOF}(object, model, ...)
-pick.model(obj, level = 0.95,  test = c("F", "Chisq", "AIC", "BIC"), ...)
+pick.model(obj, level = 0.95,  test = c("F", "Chisq", "AIC", "AICc", "BIC"), 
+    ...)
 scale01(x, xrange)
 ssHOF(x,y,M,model=5)
 }
