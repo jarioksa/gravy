@@ -66,7 +66,7 @@ gaussgradient(x, grad, family = poisson, xlab, freq.lim = 5,
 data(mtf01)
 data(mtf.alt)
 attach(mtf.alt)
-op <- par()
+op <- par(no.readonly=TRUE)
 par(mfrow=c(2,1))
 par(mar=c(4,6,1,1))
 boxgradient(mtf01, Altitude, col="pink", border="blue", notch=TRUE)
