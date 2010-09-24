@@ -227,8 +227,8 @@ void smooth (double *z, int nseg)
 
 
 #include <stdio.h> /* Debug */
-#include <assert.h> /* assert malloc */ 
-#include <stdlib.h> /* malloc */
+
+#include <R.h> /* R_alloc */
 
 /* Arbitrary constants, as used in DECORANA/ CANOCO */
 
@@ -252,10 +252,10 @@ void hillstrtch(double *f, double *x, int *nnsp, int *nnst, int *nresc,
      nst = *nnst;
      resc = *nresc;
 
-     assert(spWA =  (double *) malloc(nsp*sizeof(double)));
-     assert(spTol = (double *) malloc(nsp*sizeof(double)));
-     assert(fidot = (double *) malloc(nst*sizeof(double)));
-     assert(fdotj = (double *) malloc(nsp*sizeof(double)));
+     spWA =  (double *) R_alloc(nsp, sizeof(double));
+     spTol = (double *) R_alloc(nsp, sizeof(double));
+     fidot = (double *) R_alloc(nst, sizeof(double));
+     fdotj = (double *) R_alloc(nsp, sizeof(double));
 
      /* Make the axis start from zero, like it would start in DECORANA. */
  
@@ -404,11 +404,6 @@ void hillstrtch(double *f, double *x, int *nnsp, int *nnst, int *nresc,
 
 	  } /* End the pass (cycle) 200 */
      } /* End the all resc rescaling cycles */
-     /* free what you allocated */
-     free(spWA);
-     free(spTol);
-     free(fidot);
-     free(fdotj);
 }
 
 /* Get the Hill indices of beta diversity with a segmented smooth without rescaling */
@@ -420,10 +415,10 @@ void hill0(double *f, double *x, int *nnsp, int *nnst, double *h1, double *h2,
      double zn[SEGODD];
      int i;
 
-     assert(spWA =  (double *) malloc(*nnsp*sizeof(double)));
-     assert(spTol = (double *) malloc(*nnsp*sizeof(double)));
-     assert(fidot = (double *) malloc(*nnst*sizeof(double)));
-     assert(fdotj = (double *) malloc(*nnsp*sizeof(double)));
+     spWA =  (double *) R_alloc(*nnsp, sizeof(double));
+     spTol = (double *) R_alloc(*nnsp, sizeof(double));
+     fidot = (double *) R_alloc(*nnst, sizeof(double));
+     fdotj = (double *) R_alloc(*nnsp, sizeof(double));
 
      GetWA (f,x, nnsp, nnst, spWA, spTol);
      Marginals(f, nnsp, nnst, fidot, fdotj, &fdotdot);
@@ -437,9 +432,4 @@ void hill0(double *f, double *x, int *nnsp, int *nnst, double *h1, double *h2,
 	  zv1[i] = zv1[i]/zn[i];
 	  zv2[i] = zv2[i]/zn[i];
      }
-     /* free */
-     free(spWA);
-     free(spTol);
-     free(fidot);
-     free(fdotj);
 }
