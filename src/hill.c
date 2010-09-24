@@ -404,6 +404,11 @@ void hillstrtch(double *f, double *x, int *nnsp, int *nnst, int *nresc,
 
 	  } /* End the pass (cycle) 200 */
      } /* End the all resc rescaling cycles */
+     /* free what you allocated */
+     free(spWA);
+     free(spTol);
+     free(fidot);
+     free(fdotj);
 }
 
 /* Get the Hill indices of beta diversity with a segmented smooth without rescaling */
@@ -432,4 +437,9 @@ void hill0(double *f, double *x, int *nnsp, int *nnst, double *h1, double *h2,
 	  zv1[i] = zv1[i]/zn[i];
 	  zv2[i] = zv2[i]/zn[i];
      }
+     /* free */
+     free(spWA);
+     free(spTol);
+     free(fidot);
+     free(fdotj);
 }

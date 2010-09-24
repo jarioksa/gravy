@@ -1,8 +1,9 @@
-Version 0.1-3 September 8, 2010
+Version 0.1-3 September 24, 2010
 	* HOF: gained residuals() method with (useful) 'type's "deviance",
 	"response" and "pearson" plus (useless) 'type = "working"'.
 	* HOF: returns 'family' object.
 	* HOF: added AICc as a criterion of model picking.
+	* hillscale: correct memory leaks.
 Version 0.1-2 March 18, 2010
 	* ssHOF: HOF gave unnecesarry warnings when used with non-integer
 	data. 
