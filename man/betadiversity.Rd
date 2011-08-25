@@ -1,7 +1,6 @@
 \name{betadiversity}
 \alias{betadiversity}
 \alias{betadiversity.HOF.frame}
-\alias{print.betadiversity}
 \alias{plot.betadiversity}
 
 \title{Estimates Beta Diversity as the instantaneous rate of change at

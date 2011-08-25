@@ -1,9 +1,7 @@
 \name{nichelap}
 \alias{nichelap}
-\alias{nichelap.default}
 \alias{nichelap.HOF}
 \alias{nichelap.HOF.frame}
-\alias{print.nichelap.HOF.frame}
 \alias{as.matrix.nichelap.HOF.frame}
 
 \title{Overlap of Two Species Responses along a Gradient. }

@@ -7,12 +7,8 @@
 \alias{plot.HOF}
 \alias{plot.HOF.frame}
 \alias{predict.HOF}
-\alias{print.HOF}
-\alias{print.HOF.frame}
 \alias{GaussPara.HOF}
 \alias{GaussPara.HOF.frame}
-\alias{print.GaussPara.HOF}
-\alias{print.GaussPara.HOF.frame}
 
 \title{ Fits Huisman-Olff-Fresco (HOF) Response Models for Species
   along an Ecological Gradient. }

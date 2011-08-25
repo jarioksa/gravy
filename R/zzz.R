@@ -1,4 +1,8 @@
-.First.lib <- function(lib, pkg) {
-    library.dynam("gravy", pkg, lib)
+.onAttach <- function(lib, pkg) {
+    packageStartupMessage("This is gravy ",
+                          utils::packageDescription("gravy",
+                                                    field="Version"),
+                          appendLF = TRUE)
+
 }
 

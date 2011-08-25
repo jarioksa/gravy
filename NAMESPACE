@@ -1,0 +1,54 @@
+## compiled code
+useDynLib(gravy)
+
+## Export
+
+export(GaussPara, HOF, betadiversity, betahill, boxgradient,
+gaussgradient, gradscale, hillscale, nichelap, plotGrad)
+
+## Do NOT export the following internal functions:
+
+## export(HOF1, gradder.HOF, pick.model, scale01, ssHOF)
+
+## S3 methods
+import(stats)
+import(graphics)
+
+# GaussPara: gravy
+S3method(GaussPara, HOF.frame)
+S3method(GaussPara, HOF)
+S3method(GaussPara, optop.HOF)
+S3method(GaussPara, tol.HOF)
+# HOF: gravy
+S3method(HOF, data.frame)
+S3method(HOF, default)
+# as.matrix: base
+S3method(as.matrix, nichelap.HOF.frame)
+# betadiversity: gravy
+S3method(betadiversity, HOF.frame)
+# coef, deviance, df.residual, fitted, logLik: stats
+S3method(coef, HOF)
+S3method(deviance, HOF)
+S3method(df.residual, HOF)
+S3method(fitted, HOF)
+S3method(logLik, HOF)
+# nichelap: gravy
+S3method(nichelap, HOF.frame)
+S3method(nichelap, HOF)
+# plot: graphics
+S3method(plot, HOF.frame)
+S3method(plot, HOF)
+S3method(plot, betadiversity)
+S3method(plot, hillscale)
+# predict: stats
+S3method(predict, HOF)
+# print: base
+S3method(print, GaussPara.HOF.frame)
+S3method(print, GaussPara.HOF)
+S3method(print, HOF.frame)
+S3method(print, HOF)
+S3method(print, betadiversity)
+S3method(print, hillscale)
+S3method(print, nichelap.HOF.frame)
+# residuals: stats
+S3method(residuals, HOF)

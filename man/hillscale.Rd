@@ -2,7 +2,6 @@
 \alias{hillscale}
 \alias{betahill}
 \alias{plot.hillscale}
-\alias{print.hillscale}
 
 \title{Hill indices of Beta diversity and gradient scaling to constant
   Hill index 2 }
