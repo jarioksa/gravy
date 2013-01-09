@@ -1,4 +1,4 @@
-"boxgradient" <-
+`boxgradient` <-
     function (x, grad, horizontal = TRUE, xlab, freq.lim = 5, cex.species = 0.7,
               axes = TRUE, ...) 
 {
@@ -18,7 +18,8 @@
                    axes = FALSE,  ...)
     if (axes) {
         axis(1)
-        axis(2, at=1:ncol(mat), label=colnames(mat), las=1, cex.axis = cex.species)
+        axis(2, at=1:ncol(mat), labels = colnames(mat), las=1,
+             cex.axis = cex.species)
         box()
         rug(grad)
         abline(v = all, lwd=c(1,2,1))
