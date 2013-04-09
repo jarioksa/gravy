@@ -4,11 +4,11 @@ useDynLib(gravy)
 ## Export
 
 export(GaussPara, HOF, betadiversity, betahill, boxgradient,
-gaussgradient, gradscale, hillscale, nichelap, plotGrad)
+gaussgradient, gradscale, hillscale, nichelap, pick.model, plotGrad)
 
 ## Do NOT export the following internal functions:
 
-## export(HOF1, gradder.HOF, pick.model, scale01, ssHOF)
+## export(HOF1, gradder.HOF, scale01, ssHOF)
 
 ## S3 methods
 import(stats)

@@ -1,7 +1,7 @@
 Package: gravy
 Title: Gradient Analysis of Vegetation
-Version: 0.2-0
-Date: August 25, 2011
+Version: 0.2-1
+Date: April 9, 2013
 Author: Jari Oksanen
 Maintainer: Jari Oksanen <jari.oksanen@oulu.fi>
 Suggests: lattice 
