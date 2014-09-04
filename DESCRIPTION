@@ -1,10 +1,10 @@
 Package: gravy
 Title: Gradient Analysis of Vegetation
-Version: 0.2-1
-Date: April 9, 2013
+Version: 0.2-2
+Date: September 4, 2014
 Author: Jari Oksanen
 Maintainer: Jari Oksanen <jari.oksanen@oulu.fi>
-Suggests: lattice 
+Imports: lattice 
 Description: Gravy is an experimental package of tools for gradient analysis 
  of community data. The functions will be incorporated in `vegan' when they
  are close of being satisfactory. At the moment, using `gravy' may require an 

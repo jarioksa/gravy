@@ -13,6 +13,7 @@ gaussgradient, gradscale, hillscale, nichelap, pick.model, plotGrad)
 ## S3 methods
 import(stats)
 import(graphics)
+import(lattice)
 
 # GaussPara: gravy
 S3method(GaussPara, HOF.frame)

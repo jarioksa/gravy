@@ -53,11 +53,11 @@ plotGrad(x, grad, freq.limit = 0, ...)
 }
 
 \examples{
-data(mtf01)
-data(mtf.alt)
+data(mtf01, mtf.alt)
 attach(mtf.alt)
 fig  <- plotGrad(mtf01, Altitude)
 fig
+library(lattice)
 trellis.par.set(theme = col.whitebg())
 fig
 }

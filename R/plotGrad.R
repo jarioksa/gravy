@@ -1,7 +1,6 @@
 "plotGrad" <-
     function(x, grad, freq.limit=0, ...)
 {
-    require(lattice)
     x <- as.matrix(x)
     if (freq.limit) {
         freq <- apply(x > 0, 2, sum)

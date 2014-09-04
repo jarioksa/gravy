@@ -2,7 +2,6 @@
     function (x, level = 0.95, test = "F", species, ...) 
 {
     mods <- x
-    require(lattice)
     N <- length(mods)
     nobs <- length(mods[[1]]$x)
     if (missing(species)) 
