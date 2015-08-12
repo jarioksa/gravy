@@ -1,7 +1,7 @@
 Package: gravy
 Title: Gradient Analysis of Vegetation
 Version: 0.2-2
-Date: September 4, 2014
+Date: August 12, 2015
 Author: Jari Oksanen
 Maintainer: Jari Oksanen <jari.oksanen@oulu.fi>
 Imports: lattice
@@ -10,4 +10,4 @@ Description: Experimental tools for gradient analysis of community
  but there are still some divergent features.
 Maintainer: Jari Oksanen <jari.oksanen@oulu.fi>
 License: GPL-2
-URL: http://vegan.r-forge.r-project.org/
+URL: https://github.com/jarioksa/gravy/
