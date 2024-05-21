@@ -11,10 +11,15 @@ gaussgradient, gradscale, hillscale, nichelap, pick.model, plotGrad)
 ## export(HOF1, gradder.HOF, scale01, ssHOF)
 
 ## S3 methods
-import(stats)
-import(graphics)
 import(lattice)
-importFrom(grDevices, boxplot.stats)
+importFrom("grDevices", "boxplot.stats")
+importFrom("graphics", "abline", "axis", "box", "boxplot", "lines",
+           "matlines", "par", "points", "polygon", "rug")
+importFrom("stats", "binomial", "coef", "deviance", "df.residual",
+           "fitted", "glm", "integrate", "logLik", "median", "nlm",
+           "optimize", "plogis", "poisson", "predict", "printCoefmat",
+           "qchisq", "qf", "quasibinomial", "residuals", "spline",
+           "uniroot", "weighted.mean")
 
 # GaussPara: gravy
 S3method(GaussPara, HOF.frame)
