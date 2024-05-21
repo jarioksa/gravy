@@ -12,9 +12,9 @@
 
 /* WA estimates of optimum and tolerance for species */
 
-void GetWA (double *f, double *x, int *nnsp, int *nnst,  
+static void GetWA (double *f, double *x, int *nnsp, int *nnst,  
 	    double *spWA, double *spTol)
-{
+{ 
      int i, j, ij;
      double  sf, sfx, sfxx, tmp;
      int nsp, nst;
@@ -40,7 +40,7 @@ void GetWA (double *f, double *x, int *nnsp, int *nnst,
 
 /* Expands spWA and spTol so that spWA gives the correct variance to x */
 
-void WAexpand (double *x, double *spWA, double *spTol, double *fidot, 
+static void WAexpand (double *x, double *spWA, double *spTol, double *fidot, 
 	      double *fdotj, double *fdotdot, int *nnsp, int *nnst)
 {
      int i;
@@ -86,7 +86,7 @@ void WAexpand (double *x, double *spWA, double *spTol, double *fidot,
    should evaluate the weighted variances.
 */
 
-void Marginals(double *f, int *nnsp, int *nnst, 
+static void Marginals(double *f, int *nnsp, int *nnst, 
 	      double *fidot, double *fdotj, double *fdotdot)
 {
      int i, j, ij;
@@ -118,7 +118,7 @@ void Marginals(double *f, int *nnsp, int *nnst,
    DECORANA and CANOCO.
 */
 
-void GetHill (double *f, double *spWA, double *spTol, double *x, 
+static void GetHill (double *f, double *spWA, double *spTol, double *x, 
 	     int *nnsp, int *nnst, double *h1, double *h2)
 {
      int i, j, ij;
@@ -153,7 +153,7 @@ void GetHill (double *f, double *spWA, double *spTol, double *x,
 /* Divides x into nseg segments and gets the sum and count of hills' 
    on these segment pieces. */
 
-void segmnt(double *h1, double *h2, double *x, int nst, int nseg,
+static void segmnt(double *h1, double *h2, double *x, int nst, int nseg,
 	   double *zv1, double *zv2, double *zn)
 {
      double axmax, axmin, axbit;
@@ -191,7 +191,7 @@ void segmnt(double *h1, double *h2, double *x, int nst, int nseg,
    it operates all similarly...
 */
 
-void smooth (double *z, int nseg)
+static void smooth (double *z, int nseg)
 {
      int sweeps, k;
      double z1, z2, z3;

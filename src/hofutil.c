@@ -10,7 +10,9 @@
 
 #include <math.h>
 #include <R.h>
-#define MAXDOUBLE DOUBLE_XMAX
+#ifndef MAXDOUBLE
+#define MAXDOUBLE DBL_MAX
+#endif
 #define MAXPAR (log(MAXDOUBLE-1.0))
 
 /*
@@ -37,6 +39,7 @@ int HOF(int *Model, double *p, double *x, double *fit)
      t2 = 1.0;
      t4 = 0.0;
      t6 = 1.0;
+     /* breaks missing on purpose: we should fall through switch */
      switch (*Model) {
      case V:
      case IV:
@@ -62,11 +65,8 @@ int HOF(int *Model, double *p, double *x, double *fit)
      return 0;
 }
 
-#undef MAXPAR
 
 /* Returns derivative of HOF (Value of HOF needed!) */
-
-#define MAXPAR (log(MAXDOUBLE))
 
 int dHOF(int *Model, double *p, double *x, double *f, double *der) 
 {
@@ -81,7 +81,7 @@ int dHOF(int *Model, double *p, double *x, double *f, double *der)
      c = p[2];
      d = p[3];
      t0=t1=t2=t3=0.0;
-
+     /* breaks missing on purpose: we should fall through switch */
      switch(*Model) {
      case I:
 	  return 0.0;
@@ -117,6 +117,3 @@ int dHOF(int *Model, double *p, double *x, double *f, double *der)
 }
 
 #undef MAXPAR
-
-      
-
