@@ -30,5 +30,5 @@ you can install the package from R-Universe:
 ```r
 install.packages("gravy",
     repos =
-	c("https://jarioksa.r-universe.dev','https://cloud.r-project.org"))
+	c("https://jarioksa.r-universe.dev","https://cloud.r-project.org"))
 ```
