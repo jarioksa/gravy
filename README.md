@@ -12,7 +12,8 @@ Some bits and pieces that may still be useful include:
 * Derivatives of HOF functions and Beta diversity assessed as the rate
   of change of community composition (Oksanen & Tonteri, _J. Veg.
   Sci._ 6, 815-824, 1995).
-* Assessment of niche overlap of HOF responses.
+* Assessment of niche overlap of HOF responses (Lawesson & Oksanen,
+  _J. Veg. Sci._ 13, 279-290, 2002).
 * Rescaling of ecological gradients either to constant rate of change
   of community composition or using Hill's measures of betadiversity.
 
