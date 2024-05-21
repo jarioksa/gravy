@@ -1,3 +1,7 @@
+Version 0.4-0 May 21, 2024
+	* src: adapt to changes in R header files
+Version 0.2-3 February 7, 2018
+	* src: registrate C functions
 Version 0.2-1 April 9, 2013
 	* NAMESPACE: export pick.model.
 Version 0.2-0 August 25, 2011
